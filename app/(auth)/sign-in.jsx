@@ -5,7 +5,15 @@ import FormField from "../components/FormField";
 import { useState } from "react";
 import CustomButton from "../components/CustomButton";
 import { images } from "../../constants";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { signIn, signOut } from "../../lib/appwrite";
+import { getCurrentUser } from "../../lib/appwrite";
+
+const gotoHome = () => {
+  console.log("going to home");
+
+  router.push("/home");
+};
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -13,7 +21,23 @@ const SignIn = () => {
     password: "",
   });
   const [isSubmitting, setisSubmitting] = useState(false);
-  const Submit = () => {};
+  const Submit = async () => {
+    if (!form.email || !form.password) {
+      Alert.alert("Error", "Please fill in all the required fields");
+    }
+    setisSubmitting(true);
+    try {
+      await signIn(form.email, form.password);
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLoggedIn(true);
+      router.reload("/home");
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setisSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -45,6 +69,18 @@ const SignIn = () => {
           <CustomButton
             title="Sign In"
             handlePress={Submit}
+            containerStyles="mt-7"
+            isLoading={isSubmitting}
+          />
+          <CustomButton
+            title="Delete Session"
+            handlePress={signOut}
+            containerStyles="mt-7"
+            isLoading={isSubmitting}
+          />
+          <CustomButton
+            title="Go to Home"
+            handlePress={gotoHome}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />

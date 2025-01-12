@@ -30,9 +30,10 @@ const TabsLayout = () => {
           tabBarInactiveTintColor: "#CDCDE0",
           tabBarStyle: {
             backgroundColor: "#161622",
-            borderTopWidth: 1,
+            borderTopWidth: 0.1,
             borderTopColor: "#232533",
-            height: 50,
+            height: 60,
+            paddingTop: 10,
           },
         }}
       >
@@ -61,9 +62,9 @@ const TabsLayout = () => {
             tabBarIcon: ({ color, focused }) => {
               return (
                 <TabIcon
-                  icon={icons.home}
+                  icon={icons.bookmark}
                   color={color}
-                  name="bookmark"
+                  name="Bookmark"
                   focused={focused}
                 />
               );
@@ -78,9 +79,9 @@ const TabsLayout = () => {
             tabBarIcon: ({ color, focused }) => {
               return (
                 <TabIcon
-                  icon={icons.home}
+                  icon={icons.plus}
                   color={color}
-                  name="create"
+                  name="Create"
                   focused={focused}
                 />
               );
@@ -95,9 +96,9 @@ const TabsLayout = () => {
             tabBarIcon: ({ color, focused }) => {
               return (
                 <TabIcon
-                  icon={icons.home}
+                  icon={icons.profile}
                   color={color}
-                  name="profile"
+                  name="Profile"
                   focused={focused}
                 />
               );
