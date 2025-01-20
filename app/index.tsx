@@ -9,6 +9,8 @@ import { useGlobalContext } from "./context/GlobalProvider";
 
 export default function Index() {
   const { isLoading, isLoggedIn } = useGlobalContext();
+  console.log(useGlobalContext());
+
   if (!isLoading && isLoggedIn) return <Redirect href={"/(tabs)/home"} />;
   return (
     <SafeAreaView className="bg-primary h-full">

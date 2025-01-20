@@ -16,6 +16,8 @@ const gotoHome = () => {
 };
 
 const SignIn = () => {
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -29,9 +31,10 @@ const SignIn = () => {
     try {
       await signIn(form.email, form.password);
       const result = await getCurrentUser();
-      setUser(result);
+      //setUser(result);
       setIsLoggedIn(true);
-      router.reload("/home");
+      console.log(`email: ${form.email} password: ${form.password}`);
+      router.push("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
     } finally {

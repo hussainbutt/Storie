@@ -9,6 +9,8 @@ import { Link, router } from "expo-router";
 import { createUser, signIn } from "../../lib/appwrite";
 
 const SignUp = () => {
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [form, setForm] = useState({
     username: "",
     email: "",

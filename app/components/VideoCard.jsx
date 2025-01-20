@@ -2,6 +2,8 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { icons } from "../../constants";
 import { useState } from "react";
+import WebView from "react-native-webview";
+import { Video, ResizeMode } from "expo-av";
 
 const VideoCard = ({
   video: {
@@ -12,7 +14,10 @@ const VideoCard = ({
   },
 }) => {
   const [play, setPlay] = useState(false);
+  //console.log(video);
 
+  const sampleVideo =
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
   return (
     <View className="flex-col items-center px-4 mb-14">
       <View className="flex-row gap-3 items-start">
@@ -44,7 +49,16 @@ const VideoCard = ({
         </View>
       </View>
       {play ? (
-        <Text className="text-white">Playing</Text>
+        <Video
+          source={{
+            uri: "https://player.vimeo.com/video/949581999?h=4672125b31.mp4",
+          }}
+          shouldPlay
+          isLooping
+          className="w-full h-60 rounded-xl mt-3"
+          resizeMode={ResizeMode.CONTAIN}
+          style={{ backgroundColor: "black", width: "100%", height: 200 }}
+        />
       ) : (
         <TouchableOpacity
           activeOpacity={0.7}
