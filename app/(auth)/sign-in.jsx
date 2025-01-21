@@ -52,7 +52,7 @@ const SignIn = () => {
             className="w-[115px] h-[35px]"
           />
           <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
-            Log in to Aora
+            Log in to Storie
           </Text>
 
           <FormField
@@ -75,7 +75,7 @@ const SignIn = () => {
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />
-          <CustomButton
+          {/* <CustomButton
             title="Delete Session"
             handlePress={signOut}
             containerStyles="mt-7"
@@ -86,7 +86,7 @@ const SignIn = () => {
             handlePress={gotoHome}
             containerStyles="mt-7"
             isLoading={isSubmitting}
-          />
+          /> */}
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-100 font-pregular">
               Don't have an account?

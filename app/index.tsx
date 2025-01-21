@@ -19,7 +19,7 @@ export default function Index() {
           <View className="w-full justify-center items-center min-h-[85vh] px-4">
             <Image
               source={images.logo}
-              className="w-[130px] h-[84px]"
+              className="w-[200px] h-[120px] left-2"
               resizeMode="contain"
             />
             <Image
@@ -30,7 +30,7 @@ export default function Index() {
             <View className="relative mt-5">
               <Text className="text-3xl text-white font-bold text-center">
                 Discover Endless Possibilities with
-                <Text className="text-secondary-100"> Aora</Text>
+                <Text className="text-secondary-100"> Storie</Text>
               </Text>
               <Image
                 source={images.path}
@@ -40,7 +40,7 @@ export default function Index() {
             </View>
             <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
               Where Creativity Meets Innovation: Embark on a journey of
-              limitless exploration with Aora
+              limitless exploration with Storie
             </Text>
             <CustomButton
               title="Continue with Email"
