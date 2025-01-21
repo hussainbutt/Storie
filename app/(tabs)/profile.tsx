@@ -25,6 +25,7 @@ import { router } from "expo-router";
 
 const Profile = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();
+  console.log(`user id: ${user.$id}`);
 
   const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
 
@@ -35,7 +36,7 @@ const Profile = () => {
     setIsLoggedIn(false);
     router.replace("/sign-in");
   };
-  console.log(user);
+  console.log(`user posts: ${posts}`);
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
@@ -77,7 +78,7 @@ const Profile = () => {
               <InfoBox
                 title="1.2k"
                 subtitle="Followers"
-                containerStyles="mt-5"
+                containerStyles=""
                 titleStyles="text-xl"
               />
             </View>

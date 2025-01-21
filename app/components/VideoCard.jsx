@@ -51,10 +51,11 @@ const VideoCard = ({
       {play ? (
         <Video
           source={{
-            uri: "https://player.vimeo.com/video/949581999?h=4672125b31.mp4",
+            uri: video.uri,
           }}
           shouldPlay
           isLooping
+          useNativeControls
           className="w-full h-60 rounded-xl mt-3"
           resizeMode={ResizeMode.CONTAIN}
           style={{ backgroundColor: "black", width: "100%", height: 200 }}
