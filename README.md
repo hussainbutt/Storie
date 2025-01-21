@@ -1,6 +1,5 @@
 Here's an updated `README.md` for your app named **Storie**:
 
-```markdown
 # 📱 Storie
 
 Welcome to **Storie**, a React Native app that allows users to share and explore videos. Built with [Expo](https://expo.dev) and [Appwrite](https://appwrite.io), Storie provides a seamless experience for managing user profiles, uploading videos, and browsing trending content.
