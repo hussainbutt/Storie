@@ -1,52 +1,110 @@
+Here's an updated `README.md` for your app named **Storie**:
 
-# Welcome to your Expo app 👋
+```markdown
+# 📱 Storie
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **Storie**, a React Native app that allows users to share and explore videos. Built with [Expo](https://expo.dev) and [Appwrite](https://appwrite.io), Storie provides a seamless experience for managing user profiles, uploading videos, and browsing trending content.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+- **Authentication**: 
+  - Sign up with email, username, and password.
+  - Log in with email and password.
+  
+- **Trending Videos**: 
+  - Static showcase of trending videos on the home screen (dynamic content coming soon!).
 
-2. Start the app
+- **Video Uploads**: 
+  - Users can upload their own videos directly from the app.
 
-   ```bash
-    npx expo start
-   ```
+- **Profile Pages**: 
+  - Dedicated user profiles displaying uploaded videos and statistics.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🛠️ Built With
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **React Native**: For the cross-platform user interface.
+- **Expo**: To streamline the development process.
+- **Appwrite**: For backend services like authentication and data management.
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 📥 Installation and Setup
 
+Follow these steps to set up the app locally:
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/storie.git
+cd storie
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2️⃣ Install Dependencies
+Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+```bash
+npm install
+```
 
-## Learn more
+### 3️⃣ Configure Appwrite
+1. Set up an [Appwrite instance](https://appwrite.io/docs/installation) if you haven't already.
+2. Create a new project in Appwrite for **Storie**.
+3. Update your Appwrite credentials in the project configuration file (e.g., `lib/appwrite.js`).
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4️⃣ Start the Development Server
+Run the Expo server with:
+```bash
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 5️⃣ Run on Your Device
+You can choose to:
+- Open the app on a **development build**.
+- Run it on an [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/).
+- Run it on an [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/).
+- Use **Expo Go** for testing on a physical device.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 👩‍💻 Folder Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-#
+Here's an overview of the project's main structure:
+
+```
+Storie/
+├── app/                # Screens and components
+├── components/         # Reusable UI components
+├── lib/                # Appwrite and utility functions
+├── assets/             # Images and icons
+├── App.js              # Entry point of the app
+└── package.json        # Project dependencies and scripts
+```
+
+---
+
+## 🛡️ Contributing
+
+Contributions are welcome! Feel free to open issues or create pull requests for improvements or new features.
+
+---
+
+## 📚 Learn More
+
+Explore these resources to dive deeper into the tools used in **Storie**:
+
+- [React Native Documentation](https://reactnative.dev/docs/getting-started)
+- [Expo Documentation](https://docs.expo.dev/)
+- [Appwrite Documentation](https://appwrite.io/docs)
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+🎉 **Thank you for checking out Storie! Let’s make video sharing more fun and accessible!**
+```
