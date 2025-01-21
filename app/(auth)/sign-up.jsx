@@ -7,10 +7,10 @@ import CustomButton from "../components/CustomButton";
 import { images } from "../../constants";
 import { Link, router } from "expo-router";
 import { createUser, signIn } from "../../lib/appwrite";
+import { useGlobalContext } from "../context/GlobalProvider";
 
 const SignUp = () => {
-  const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = useState({
     username: "",
     email: "",

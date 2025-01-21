@@ -33,7 +33,7 @@ const Profile = () => {
     console.log("log out");
     setUser(null);
     setIsLoggedIn(false);
-    router.push("/(auth)/sign-in");
+    router.replace("/sign-in");
   };
   console.log(user);
   return (

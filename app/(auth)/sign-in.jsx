@@ -8,6 +8,7 @@ import { images } from "../../constants";
 import { Link, router } from "expo-router";
 import { signIn, signOut } from "../../lib/appwrite";
 import { getCurrentUser } from "../../lib/appwrite";
+import { useGlobalContext } from "./../context/GlobalProvider";
 
 const gotoHome = () => {
   console.log("going to home");
@@ -16,8 +17,7 @@ const gotoHome = () => {
 };
 
 const SignIn = () => {
-  const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -31,10 +31,10 @@ const SignIn = () => {
     try {
       await signIn(form.email, form.password);
       const result = await getCurrentUser();
-      //setUser(result);
+      setUser(result);
       setIsLoggedIn(true);
       console.log(`email: ${form.email} password: ${form.password}`);
-      router.push("/home");
+      router.replace("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
     } finally {
